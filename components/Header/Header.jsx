@@ -3,7 +3,7 @@ import Socials from '../Socials/Socials'
 export default function Header() {
   return (
     <header className="flex justify-between items-center px-8 py-4 bg-[#020617] text-white fixed w-full">
-      <h1 className="text-lg font-bold"><a href="/">RemixNode's Blog</a></h1>
+      <h1 className="text-lg font-bold"><a href="/">RemixNodes Blog</a></h1>
       <nav className="flex space-x-6">
         <a href="/">Home</a>
         <a href="/blog">Blog</a>
