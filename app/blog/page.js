@@ -1,5 +1,5 @@
 import PostList from "@/components/Posts/PostList/PostList";
 
-export default function page() {
+export default function PostListPage() {
   return <PostList />;
 }
