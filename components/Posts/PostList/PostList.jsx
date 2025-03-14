@@ -1,10 +1,9 @@
-import { getAllPosts } from "@/queries/blog-data"
 import LatesPost from "../LatesPost/LatesPost";
 import PostCard from "../PostCard/PostCard";
 
 
-export default async function PostList() {
-  const posts = await getAllPosts();
+export default async function PostList({posts}) {
+  
 
   const latestPost = posts[0].node;
   const restPosts = posts.slice(1);
