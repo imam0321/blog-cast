@@ -1,4 +1,5 @@
 import { getClient } from "@/lib/graphQLClient";
+import { gql } from "graphql-request";
 
 export const getAllPosts = async (tags) => {
   const client = getClient();
@@ -8,7 +9,7 @@ export const getAllPosts = async (tags) => {
       query allPosts($tags: [ObjectId!]) {
         publication(host: "blog.greenroots.info") {
           title
-          posts(first: 20, filter: { tags: tags }) {
+          posts(first: 20, filter: { tags: $tags }) {
             pageInfo {
               hasNextPage
               endCursor
@@ -52,7 +53,7 @@ export const getPost = async (slug) => {
     gql`
       query postDetails($slug: String!) {
         publication(host: "blog.greenroots.info") {
-          post(slug: slug) {
+          post(slug: $slug) {
             author {
               name
               profilePicture
